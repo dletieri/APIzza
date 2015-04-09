@@ -1,0 +1,11 @@
+{
+  "draw": 1,
+  "recordsTotal": 4,
+  "recordsFiltered": 4,
+  "data": [
+    {"productID": "1", "id":"1254", "productDesc":"Coca-Cola 2l", "qtt":"2", "obs":""},
+    {"productID": "3", "id":"1255", "productDesc":"Pizza Calabresa G", "qtt":"0.5", "obs":"P01"},
+    {"productID": "4", "id":"1256", "productDesc":"Pizza Calabresa G", "qtt":"0.5", "obs":"P01"},
+    {"productID": "10", "id":"1257", "productDesc":"X-Bacon", "qtt":"2", "obs":"sem cebola, cortado ao meio"}
+  ]
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if IE 7]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>jQuery Columns Examples</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<link id="style" href="css/classic.css" rel="stylesheet" media="screen">
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<style>
+body {
+font-family: helvetica, sans-serif;
+}
+.source {
+font-family: monospace;
+padding: 10px;
+}
+</style>
+</head>
+<body>
+<div class="jquery-script-center">
+
+
+<h1 style="margin-top:150px;">jQuery Columns Examples</h1>
+<label>Change Theme:</label>
+<select id="theme">
+<option value="classic.css">Classic</option>
+<option value="clean.css">Clean</option>
+</select>
+
+<h2>Example 4: Using a conditional statement</h2>
+<div id="example4"></div>
+<pre class="source"> 
+$.ajax({
+	url:'custom.json',
+	dataType: 'json', 
+	success: function(json) { 
+		example4 = $('#example4').columns({
+			data:json,
+			schema: [
+				{"header":"ID", "key":"id", "template":"000{{id}}"},
+				{"header":"Name", "key":"name"},
+				{"header":"Email", "key":"email", "template":'&lt;a href="mailto:{{email}}"&gt;{{email}}&lt;/a&gt;'},
+				{"header":"Gender", "key":"gender", "condition":function(val) {return (val=="male");}}
+			]
+
+		}); 
+	}
+}); 
+		</pre>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+<script src="js/jquery.columns-1.0.min.js"></script> 
+<script>
+			//example 4
+			$.ajax({
+				url:'data.json',
+				dataType: 'json', 
+				success: function(json) { 
+					example4 = $('#example4').columns({
+						data:json,
+						schema: [
+							{"header":"Phone", "key":"phone"},
+							{"header":"Name", "key":"name"},
+							{"header":"Address", "key":"address"}
+						]
+ 
+					}); 
+				}
+			}); 
+
+			$('#theme').change(function() {
+				$('link').attr('href', 'css/'+$(this).val());
+			})
+		</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
